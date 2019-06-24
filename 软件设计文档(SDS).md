@@ -5,8 +5,8 @@
     - [技术使用](#5)
     - [模块划分](#6)
     - [UI设计指南](#7)
-- [Seller Management System Frontend (商家)](#2)
-- [E-Order Backend](#3)
+- [web前端](#2)
+- [服务端](#3)
 
 <h2 id='1'> 一、安卓端app </h2>
 
