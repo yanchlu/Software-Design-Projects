@@ -32,15 +32,15 @@
 
 主菜单界面包括商家简介，菜品列表以及订单按钮。点击商家信息（图片，名字，简介）可以跳转到商家详情界面。
 
-![jump_to_shop_detail]()
+![jump_to_shop_detail](SDS_Android/jump_to_shop_detail.JPG)
 
 菜单列表顶部的标题栏显示当前列表第一个item的种类，与左边的种类列表互相关联。点击左边的菜品种类，右边的菜品列表会跳转到相应的种类；滑动右边的菜品列表，左边的菜品种类会相应地切换。可以点击按钮添加菜品到订单或者从订单中删除菜品，点击菜品列表中的项目会跳转到菜品详情界面。
 
-![list_with_list]()
+![list_with_list](SDS_Android/main_food_list.JPG)
 
 底部的订单按钮分为两部分，左部分显示当前订单总价，当订单列表中有菜品项时，点击可以查看订单。右部分当订单列表中有菜品项时按下可以跳转到订单确认界面。
 
-![btn_order]()
+![btn_order](SDS_Android/btn_order.JPG)
 
 - <h4 id='63'> 3.3 商店详情 </h4>
 
@@ -50,17 +50,17 @@
 
 菜品详情界面包括菜品图片，菜品名称和菜品简介。点击按钮可以添加菜品到订单或者从订单中删除菜品。底部的订单按钮与主菜单界面逻辑相同。
 
-![button_add]()
+![button_add](SDS_Android/button_add.JPG)
 
 - <h4 id='65'> 3.5 订单确认与订单信息 </h4>
 
 订单确认界面与订单信息界面的设计大致相同，使用多item样式ListView作为主要布局，item使用CardView进行美化。订单确认界面包括订单列表和订单备注添加两个card，订单信息界面包括订单列表和订单信息显示订单号和订单时间）两个card。
 
-![item_type_1]()
+![item_type_1](SDS_Android/item_type_1.JPG)
 
-![item_type_2]()
+![item_type_2](SDS_Android/item_type_2.JPG)
 
-![item_type_3]()
+![item_type_3](SDS_Android/item_type_3.JPG)
 
 - <h4 id='66'> 3.6 网络访问 </h4>
 
@@ -81,7 +81,7 @@ b) 重点突出
 
 例如主菜单界面，从上至下的控件内容清晰明了，控件逻辑设计合理且符合用户预期。
 
-![main_activity]()
+![main_activity](SDS_Android/main_activity.JPG)
 
 c) 流程明确
 
