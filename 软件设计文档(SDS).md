@@ -81,7 +81,7 @@ b) 重点突出
 
 例如主菜单界面，从上至下的控件内容清晰明了，控件逻辑设计合理且符合用户预期。
 
-![main_activity](SDS_Android/main_activity.JPG)
+![main_activity](SDS_Android/main_activity.jpg)
 
 c) 流程明确
 
