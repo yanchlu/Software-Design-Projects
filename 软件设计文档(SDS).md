@@ -114,14 +114,20 @@ d) 减少等待，反馈及时
 
 <h3 id='32'> 2.架构设计 </h3>
 
+<h4 id='321'> 应用程序目录 </h4>  
+
+![Program Directory](SDS_PHP/programdirectory.png)
+
+- 后端程序架构类似MVC，即分成了模型(model)，视图(view)，控制器(controller)
+    - 上图目录中的settings文件夹即是model，或者说是连接model的配置文件，后端通过settings对数据库进行增删改查的操作
+    - 上图目录中的app文件夹即是view，它负责的是对外的接口，解析网络请求并将请求转给include文件夹中对应的处理单元
+    - 上图目录中的include文件夹即是controller，它负责控制网络请求通过API和服务器数据库的交互
+
 <h4 id='321'> 逻辑视图 </h4>
 
 ![Logical View](SDS_PHP/logicalview.png)
 
 <h3 id='33'> 3.模块划分 </h3>
-<h4 id='331'> 应用程序目录 </h4>  
-
-![Module Division](SDS_PHP/moduledivision.png)
 
 服务端的模块划分大体上分为登录/注册，处理商家请求模块和处理客户请求模块
 
