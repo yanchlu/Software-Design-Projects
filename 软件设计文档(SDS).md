@@ -7,6 +7,11 @@
     - [UI设计指南](#7)
 - [web前端](#2)
 - [服务端](#3)
+    - [技术选择理由](#31)
+    - [架构设计](#32)
+    - [模块划分](#33)
+    - [数据库设计](#34)
+    - [API设计](#35)
 
 <h2 id='1'> 一、安卓端app </h2>
 
@@ -70,7 +75,7 @@ DensityUtil工具类，用于dp和px之间互相转换，在使用java代码设�
 
 StoreData单例类，用于网络加载数据的存储。
 
-<h3 id='7'> 4. UI设计指南：</h4>
+<h3 id='7'> 4. UI设计指南：</h3>
 a) 友好礼貌
 
 为了避免用户使用安卓App时，注意力被周围复杂环境干扰，App在设计时应该注意减少无关的设计元素对用户目标的干扰，礼貌地向用户展示程序提供的服务，友好地引导用户进行操作。
@@ -94,3 +99,83 @@ d) 减少等待，反馈及时
 页面的过长时间的等待会引起用户的不良情绪，因此应当尽量减少用户的等待时间，通过部分UI界面的加载缓解用户的不良情绪。
 
 由于ListView中包含的菜品图片加载需要请求网络，如果使用一次性加载的方式，从扫码界面到主界面的等待时间会非常长，因此将网络请求写入Adapter中，当需要显示图片且图片不存在的时候请求网络加载图片，并将图片保存在本地，下一次请求时直接从本地获取。另一方面，限定线程池的数量（3）避免程序卡死。
+
+
+<h2 id='3'> 三、后端 </h2>
+
+<h3 id='31'> 1.技术选择理由 </h3>
+<h3 id='32'> 2.架构设计 </h3>
+
+<h3 id='33'> 3.模块划分 </h3>
+<h4 id='331'> 应用程序目录 </h4>  
+
+![Module Division](SDS_PHP/moduledivision.png)
+
+服务端的模块划分大体上分为登录/注册，处理商家请求模块和处理客户请求模块
+
+- 登录/注册模块(商家进行登录/注册账户，成功则录入数据库并返回一个token用于后续验证商家身份)
+- 处理商家请求模块，又细分为商家信息模块，订单信息模块和菜单信息模块(该模块中的API都需要鉴权，用于后续商家管理自身信息，自家菜单和订单信息的身份验证)
+    - 商家信息模块(用于设置商家图标，获取商家信息，更改商家信息和生成点餐链接)
+    - 订单信息模块(用于获取订单列表，订单详细信息和设置订单状态)
+    - 菜单信息模块(用于用于获取分类和菜品列表并对其进行增删改的操作)
+- 处理客户请求模块，又细分为拉取菜单模块和生成订单模块(仅接受自身开发的安卓APP的请求)
+    - 拉取菜单模块(用来拉取对应商家的菜单信息)
+    - 生成订单模块(用于将用户的订单信息存入数据库)
+
+<h3 id='34'> 4.数据库设计 </h3>
+
+![Database Design](SDS_PHP/DatabaseDesign.png)
+
+- user
+```
+CREATE TABLE IF NOT EXISTS user (
+        id INTEGER AUTO_INCREMENT PRIMARY KEY,
+        username VARCHAR(32) UNIQUE NOT NULL,
+        passwd VARCHAR(255) NOT NULL,
+        nickname VARCHAR(255) DEFAULT \'\',
+        description VARCHAR(255) DEFAULT \'\',
+        avatar VARCHAR(255) DEFAULT \'\'
+    ) DEFAULT CHARSET = utf8
+```
+
+- type
+```
+CREATE TABLE IF NOT EXISTS type (
+        id INTEGER AUTO_INCREMENT PRIMARY KEY,
+        userid INTEGER NOT NULL,
+        typename VARCHAR(32) NOT NULL,
+        CONSTRAINT t_u_fk FOREIGN KEY (userid) REFERENCES user (id) ON UPDATE CASCADE ON DELETE CASCADE
+    ) DEFAULT CHARSET = utf8
+```
+
+- menu
+```
+CREATE TABLE IF NOT EXISTS menu (
+        id INTEGER AUTO_INCREMENT PRIMARY KEY,
+        userid INTEGER NOT NULL,
+        typeid INTEGER NOT NULL,
+        foodname VARCHAR(32) NOT NULL,
+        price DECIMAL(8,2) NOT NULL,
+        description VARCHAR(255) DEFAULT \'\',
+        imgurl VARCHAR(255) DEFAULT \'\',
+        CONSTRAINT m_u_fk1 FOREIGN KEY (userid) REFERENCES user (id) ON UPDATE CASCADE ON DELETE CASCADE,
+        CONSTRAINT m_t_fk2 FOREIGN KEY (typeid) REFERENCES type (id) ON UPDATE CASCADE ON DELETE CASCADE
+    ) DEFAULT CHARSET = utf8
+```
+
+- list
+```
+CREATE TABLE IF NOT EXISTS list (
+        id INTEGER AUTO_INCREMENT PRIMARY KEY,
+        userid INTEGER NOT NULL,
+        site INTEGER NOT NULL,
+        ordertime Datetime NOT NULL,
+        status Boolean NOT NULL DEFAULT false,
+        info Text NOT NULL,
+        remark VARCHAR(255) DEFAULT \'\',
+        CONSTRAINT o_u_fk FOREIGN KEY (userid) REFERENCES user (id) ON UPDATE CASCADE ON DELETE CASCADE
+    ) DEFAULT CHARSET = utf8
+```
+
+<h3 id='35'> 5.API设计 </h3>
+[API设计相关请点击跳转](https://github.com/ssad2019/Web-Server-Side/blob/master/Document(API).md)
