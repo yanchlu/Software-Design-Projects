@@ -79,6 +79,8 @@
 
 - <h4 id='66'> 3.6 网络访问 </h4>
 
+Network工具类，用于访问网络，包含通过post/get方法使用http协议获取json串和bitmap的函数。
+
 - <h4 id='67'> 3.7 其他工具/单例类 </h4>
 
 DensityUtil工具类，用于dp和px之间互相转换，在使用java代码设置控件宽高时使用。
