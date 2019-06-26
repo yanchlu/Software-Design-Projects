@@ -157,19 +157,19 @@ Android 7.0版本以上
 ### 3 时序图
 
 - 扫码
-![scan](../pic/07-05-Usecase-Design/07-05-01-Order-Usecase-Design/scan.png)  
+![scan]https://github.com/ssad2019/pages/blob/master/pic/07-05-Usecase-Design/07-05-01-Order-Usecase-Design/scan.png)
         
 - 点餐
-![order](../pic/07-05-Usecase-Design/07-05-01-Order-Usecase-Design/order.png) 
+![order]https://github.com/ssad2019/pages/blob/master/pic/07-05-Usecase-Design/07-05-01-Order-Usecase-Design/order.png)
 
 - 商家注册
-![register](../pic/07-05-Usecase-Design/07-05-02-Online-Usecase-Design/register.png)  
+![register](https://github.com/ssad2019/pages/blob/master/pic/07-05-Usecase-Design/07-05-02-Online-Usecase-Design/register.png)  
 
 - 商家登陆
-![login](../pic/07-05-Usecase-Design/07-05-02-Online-Usecase-Design/login.png)  
+![login](https://github.com/ssad2019/pages/blob/master/pic/07-05-Usecase-Design/07-05-02-Online-Usecase-Design/login.png)  
 
 - 菜品管理
-![manage_dish](../pic/07-05-Usecase-Design/07-05-03-Manage-Usecase-Design/manage_dish.png)  
+![manage_dish](https://github.com/ssad2019/pages/blob/master/pic/07-05-Usecase-Design/07-05-03-Manage-Usecase-Design/manage_dish.png)  
 
 ### 4 活动图
 
