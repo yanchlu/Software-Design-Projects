@@ -44,16 +44,13 @@ Android 7.0版本以上
 
 **功能性需求：**
 
-两个系统： 用户点餐系统、商家管理系统
+用户点餐系统、商家管理系统
 
-
- ### 1 用例图
+### 1 用例图
  
 ![case.png](https://github.com/ssad2019/pages/blob/master/doc/use_case/%E7%94%A8%E4%BE%8B%E5%9B%BE.png)
 
 ### 2 用例描述
-
-### 扫码点餐用例
 
 #### 1. Use case：扫描二维码
 
@@ -157,61 +154,32 @@ Android 7.0版本以上
    
    主成功场景：顾客提交订单，商家实时查看订单界面刷新，可以看到新提交的订单以及订单详情（座位号，订单列表，备注）
    
-**功能点：**
+### 3 时序图
 
-
-- 点餐
- 
-  ![order](https://raw.githubusercontent.com/E-Order/Dashboard/master/document/Requirement_Specification/系统顺序图/order_ssd.png)
+- 扫码
+![scan](../pic/07-05-Usecase-Design/07-05-01-Order-Usecase-Design/scan.png)  
         
-- 管理购物车
-![管理购物车15331209](https://github.com/E-Order/Dashboard/blob/master/document/Requirement_Specification/%E7%B3%BB%E7%BB%9F%E9%A1%BA%E5%BA%8F%E5%9B%BE/15331209_%E7%AE%A1%E7%90%86%E8%B4%AD%E7%89%A9%E8%BD%A6.png)
+- 点餐
+![order](../pic/07-05-Usecase-Design/07-05-01-Order-Usecase-Design/order.png) 
 
-- 提交订单
-![提交订单15331236](https://github.com/E-Order/Dashboard/blob/master/document/Requirement_Specification/%E7%B3%BB%E7%BB%9F%E9%A1%BA%E5%BA%8F%E5%9B%BE/post_order_ssd.png)
-- 处理付款
-![处理付款15331213](https://github.com/Evene/Dashboard/blob/master/img/pay_sequence.PNG)
+- 商家注册
+![register](../pic/07-05-Usecase-Design/07-05-02-Online-Usecase-Design/register.png)  
 
-- 添加商品
-![添加商品15331217](https://github.com/E-Order/Dashboard/blob/master/document/Requirement_Specification/%E7%B3%BB%E7%BB%9F%E9%A1%BA%E5%BA%8F%E5%9B%BE/15331217-%E6%B7%BB%E5%8A%A0%E5%95%86%E5%93%81.png)
+- 商家登陆
+![login](../pic/07-05-Usecase-Design/07-05-02-Online-Usecase-Design/login.png)  
 
-- 更新商品
-![更新商品15331217](https://github.com/E-Order/Dashboard/blob/master/document/Requirement_Specification/%E7%B3%BB%E7%BB%9F%E9%A1%BA%E5%BA%8F%E5%9B%BE/15331217-%E6%9B%B4%E6%96%B0%E5%95%86%E5%93%81.png)
+- 菜品管理
+![manage_dish](../pic/07-05-Usecase-Design/07-05-03-Manage-Usecase-Design/manage_dish.png)  
 
-- 添加种类
-![添加种类15331217](https://github.com/E-Order/Dashboard/blob/master/document/Requirement_Specification/%E7%B3%BB%E7%BB%9F%E9%A1%BA%E5%BA%8F%E5%9B%BE/15331217-%E6%B7%BB%E5%8A%A0%E7%A7%8D%E7%B1%BB.png)
+### 4 活动图
 
-- 删除商品
-![删除商品15331198](https://github.com/E-Order/Dashboard/blob/master/document/Requirement_Specification/%E7%B3%BB%E7%BB%9F%E9%A1%BA%E5%BA%8F%E5%9B%BE/15331198_%E5%88%A0%E9%99%A4%E5%95%86%E5%93%81.PNG)
-
-- 删除种类
-![删除种类15331198](https://github.com/E-Order/Dashboard/blob/master/document/Requirement_Specification/%E7%B3%BB%E7%BB%9F%E9%A1%BA%E5%BA%8F%E5%9B%BE/15331198_%E5%88%A0%E9%99%A4%E5%95%86%E5%93%81%E7%A7%8D%E7%B1%BB.PNG)
-
-- 查看订单
-![查看订单15331286](https://github.com/E-Order/Dashboard/blob/master/document/Requirement_Specification/%E7%B3%BB%E7%BB%9F%E9%A1%BA%E5%BA%8F%E5%9B%BE/%E6%9F%A5%E7%9C%8B%E8%AE%A2%E5%8D%95_15331286.png)
-
-  以*查看订单*为例，绘制活动图
-
-<img src = "https://raw.githubusercontent.com/E-Order/Dashboard/master/document/graph/activity.png">
+![activity](https://github.com/ssad2019/pages/blob/master/doc/use_activity/%E6%B4%BB%E5%8A%A8%E5%9B%BE.png)
 
 **非功能性需求：**
 
-1. 数据格式：
- 价格精确到两位小数。（如12.00）
+1. 性能：
+ - 商家实时接收订单消息，延迟不得超过3s
 
-
-2. 性能：
- - 可接受至少50桌用户同时点餐
- - 商家实时接收订单消息，延迟不得超过10s
-
-3. 安全性：
-  需保障商家用户数据的安全，对账号密码进行保护。
- 
-4. 可靠性:
-- 从远程服务失败中恢复，提供远程服务的本地实现，比如：本地产品信息数据库缓存最常用的一小部分产品信息。
-- 限制服务器最大连接数，防止由于服务器负载过重而使用户掉线
-
-5. 可适应性：
-  针对第三方服务，创建一个实现了接口的资源适配器对象（主要针对支付功能）
- 
+2. 安全性：
+ - 需保障商家用户数据的安全，对账号密码进行保护。
  
