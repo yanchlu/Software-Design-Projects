@@ -49,7 +49,7 @@ Android 7.0版本以上
 
  ### 1 用例图
  
-![case.png]https://github.com/ssad2019/pages/blob/master/doc/use_case/%E7%94%A8%E4%BE%8B%E5%9B%BE.png)
+![case.png](https://github.com/ssad2019/pages/blob/master/doc/use_case/%E7%94%A8%E4%BE%8B%E5%9B%BE.png)
 
 ### 2 用例描述
 
