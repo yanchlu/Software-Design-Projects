@@ -157,10 +157,10 @@ Android 7.0版本以上
 ### 3 时序图
 
 - 扫码
-![scan]https://github.com/ssad2019/pages/blob/master/pic/07-05-Usecase-Design/07-05-01-Order-Usecase-Design/scan.png)
+![scan](https://github.com/ssad2019/pages/blob/master/pic/07-05-Usecase-Design/07-05-01-Order-Usecase-Design/scan.png)
         
 - 点餐
-![order]https://github.com/ssad2019/pages/blob/master/pic/07-05-Usecase-Design/07-05-01-Order-Usecase-Design/order.png)
+![order](https://github.com/ssad2019/pages/blob/master/pic/07-05-Usecase-Design/07-05-01-Order-Usecase-Design/order.png)
 
 - 商家注册
 ![register](https://github.com/ssad2019/pages/blob/master/pic/07-05-Usecase-Design/07-05-02-Online-Usecase-Design/register.png)  
