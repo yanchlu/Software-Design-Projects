@@ -5,8 +5,8 @@
 
 - 源代码
    - [安卓端](https://github.com/ssad2019/EE_easyeat_app)
-   - [web前端](https://github.com/ssad2019/web-client)
-   - [服务端](https://github.com/ssad2019/Web-Server-Side)
+   - [Web前端](https://github.com/ssad2019/web-client)
+   - [Web服务端](https://github.com/ssad2019/Web-Server-Side)
    
 - [软件需求规格说明书SRS](https://github.com/ssad2019/Software-Design-Projects/blob/master/%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6(SRS).md)
   
