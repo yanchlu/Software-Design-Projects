@@ -40,7 +40,8 @@
 二维码扫描页面是用户打开app后看到的第一个页面。
 包含标题和扫码图标，点击扫码图标开始扫码。
 扫码成功将跳转到点餐界面。
-![01](SDS_Android/android_001.png)
+
+![01](SDS_Android/android_scan.png)
     
 - <h4 id='62'> 3.2 主菜单 </h4>
 
